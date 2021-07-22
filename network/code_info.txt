@@ -1,0 +1,31 @@
+network: toutengnet
+pass: shuiguosauce
+chainid: 123
+
+poa_node1 info:
+0x581668f96662eADfCb17A4809C7E1Eb6Ff41D012
+poa_node1\keystore\UTC--2021-07-18T16-25-26.203879300Z--581668f96662eadfcb17a4809c7e1eb6ff41d012
+
+
+poa_node2 info:
+0x6D9533E22cE943a909b8725c08Df4C5E0ea4e258
+poa_node2\keystore\UTC--2021-07-18T16-27-31.458111200Z--6d9533e22ce943a909b8725c08df4c5e0ea4e258
+
+
+# Commands:
+
+Create Accounts
+./geth --datadir poa_node1 account new
+./geth --datadir poa_node2 account new
+
+Initialize
+./geth --datadir poa_node1 init toutengnet.json
+./geth --datadir poa_node2 init toutengnet.json
+
+Mine
+./geth --datadir poa_node1 --unlock "0x581668f96662eADfCb17A4809C7E1Eb6Ff41D012" --mine --rpc --allow-insecure-unlock
+./geth --datadir poa_node2 --unlock "0x6D9533E22cE943a909b8725c08Df4C5E0ea4e258" --mine --port 30304 --bootnodes "enode://c653fb1fdde1187183e9e8c5d3787544929acb55fb84280944aa56510aeab8c9d37f69f21f78adab29c95e28b92c7d20bff66fb04d879dd702361a9da2d749a2@127.0.0.1:30303" --ipcdisable --allow-insecure-unlock
+
+
+
+http://127.0.0.1:8545/
