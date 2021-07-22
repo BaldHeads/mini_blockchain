@@ -22,6 +22,7 @@ links:
         - paste addresses to be prefunded without the first 0x 
         - choose **NO** for prefund with 1 wei
         - input & **REMEMBER** a chain ID (mine is 123) & password when prompted (shuiguosauce)
+        - I left blocktime at default 15 seconds, which is just the time it takes to mine a new block
         - when genesis is completed, `manage existing genesis` and then `export genesis configurations`
 
 
@@ -35,6 +36,7 @@ links:
 
 
         - `./geth --datadir poa_node2 --unlock "poa_node2_address" --mine --port 30304 --bootnodes "poa_node1_enode_address@127.0.0.1:30303" --ipcdisable --allow-insecure-unlock`
+        - make sure where it says port, the number is different from the one from the enode of node1
 
 At this point, both nodes should be running. Keep them running during the next set of steps.
 
